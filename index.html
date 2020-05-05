@@ -7,6 +7,8 @@
     <style>
     .color.cyan:before {background-color: cyan;}
     </style>
+    <link rel="shortcut icon" type="image/svg" sizes="192x192" href="./assets/images/icon_192x192.svg">
+    <link rel="shortcut icon" type="image/svg" sizes="512x512" href="./assets/images/icon_512x512.svg">
   </head>
   <body>
     <main>
@@ -16,7 +18,7 @@
             <div class="row">
               <div class="three wide center aligned column">
                 <div class="avatar-wrapper">
-                  <object class="avatar" data="./assets/images/avatar.svg" role="img" aria-label="My profile picture"></object>
+                  <object class="avatar" data="./assets/images/icon_512x512.svg" role="img" aria-label="My profile picture" onmouseover="hover(this)" onmouseout="unhover(this)"></object>
                 </div>
               </div>
               <div class="thirteen wide column">
@@ -277,6 +279,13 @@
         }
         document.getElementById("midnightblue").addEventListener("click", switchToColor.bind(this, "midnightblue"));
         document.getElementById("cyan").addEventListener("click", switchToColor.bind(this, "cyan"));
+        function hover(element) {
+          element.setAttribute('data', './assets/images/avatar.svg');
+        }
+
+        function unhover(element) {
+          element.setAttribute('data', './assets/images/icon_512x512.svg');
+        }
     </script>
 
   </body>
